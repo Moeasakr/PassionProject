@@ -1,0 +1,74 @@
+﻿body {
+}
+#PairingArea {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 100px;
+    justify-content: center;
+}
+.PairButton {
+    margin: 5px;
+    font-size: 1.2em;
+    padding: 7px;
+    background-color: white;
+    border-radius: 30%;
+    width: 40px;
+    flex: 1 0 1;
+    outline: none;
+}
+#pairingH2 {
+    text-align: center;
+}
+.hiddenButtons {
+    display: none;
+}
+.roundEndButtons {
+    border-radius: 2%;
+    font-size: 2em;
+    margin: 1em;
+    padding: .5em;
+    flex: 1 0 0;
+    max-width: 150px;
+    border: none;
+    color: white;
+    background-color: #22b2ea;
+    outline: none;
+}
+#helpWrapper {
+    text-align: center;
+}
+#helpTable {
+    margin: 0 auto;
+}
+#helpTable td, #helpTable th {
+    border: solid 1px black;
+    font-size: 1.3em;
+}
+#helpTable td {
+    text-align: center;
+    padding: 5px 0;
+}
+#helpTable th {
+    padding: 10px;
+    background-color: #22b2ea;
+}
+.SuccessfulRound {
+    font-size: 9em;
+    margin-top: 1em;
+    animation: successful-header-scaling 5s infinite;
+}
+
+@keyframes successful-header-scaling {
+    0% {
+        transform: scale(1.05);
+        color: #22b2ea;
+    }
+    50% {
+        transform: scale(.99);
+        color: #ee4266;
+    }
+    100% {
+        transform: scale(1.05);
+        color: #22b2ea;
+    }
+}

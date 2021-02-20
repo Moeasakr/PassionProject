@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Help";
+}
+
+<div id="helpWrapper">
+    <h2>Hiragana</h2>
+    <table id="helpTable">
+        <thead>
+            <tr>
+                <th>English</th>
+                <th>Japanese</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.EnglishLetter</td>
+                    <td>@item.JapaneseLetter</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,17 @@
+﻿@Scripts.Render("~/bundles/myScripts")
+@{
+    ViewBag.Title = "Play area";
+}
+
+<h2 id="pairingH2">Match the pairs</h2>
+
+<div id="PairingArea">
+    @foreach (var item in Model)
+    {
+        @Html.Raw(item);
+    }
+    <button id="restartButton" class="hiddenButtons roundEndButtons" onclick="location.href='@Url.Action("StartRound", "Pairing")'">Restart</button>
+    <button id="homeButton" class="hiddenButtons roundEndButtons" onclick="location.href='@Url.Action("Index", "Home")'">Home</button>
+</div>
+
+@*@RenderPage("~/Views/Pairing/Help.cshtml")*@

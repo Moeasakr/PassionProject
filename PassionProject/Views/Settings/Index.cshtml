@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Settings";
+}
+
+<h2>Settings</h2>
+
+<form action="/" method="post">
+    <div>
+        <label for="lowSuccessRateCheckbox">Only user pairs with low success rate?</label>
+        <input type="checkbox" id="lowSuccessRateCheckbox" disabled/>
+    </div>
+    <div>
+        <label>Number of pairs: </label>
+        <input type="radio" name="pairAmount" id="defaultAmount" value="Default" checked/>
+        <label for="randomAmount">Default (10)</label>
+        <input type="radio" name="pairAmount" id="randomAmount" value="Random" />
+        <label for="customAmount">Random</label>
+        <input type="radio" name="pairAmount" id="customAmount" value="Custom" />
+        <label for="customAmount">Custom</label>
+    </div>
+    <div>
+        <label for="">Alphabet: </label>
+        <select id="alphabetDropdown">
+            <option value="Hiragana" selected>Hiragana</option>
+            <option value="Katakana">Katakana</option>
+        </select>
+    </div>
+    <input type="submit" name="submit" value="Submit" />
+</form>
