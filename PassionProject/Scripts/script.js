@@ -8,6 +8,8 @@
     var pairsArray = pairingArea.children;
     var pairCount = (pairsArray.length - 2) / 2;
     var header = document.getElementById("pairingH2");
+    var numberOfFails = 0;
+    var status;
 
     //Variables for the styling
     var firstSelectionColor = '#F4EBD0';
@@ -56,6 +58,8 @@
                     document.getElementById(firstButtonClickedId).style.backgroundColor = unsuccessfulMatchColor;
                     document.getElementById(secondButtonClickedId).style.backgroundColor = unsuccessfulMatchColor;
 
+                    numberOfFails++;
+
                     setTimeout(function myfunction() {
                         document.getElementById(firstButtonClickedId).style.backgroundColor = defaultColor;
                         document.getElementById(secondButtonClickedId).style.backgroundColor = defaultColor;
@@ -69,6 +73,7 @@
     function SuccessfulPairing() {
         successCounter++;
         if (successCounter === pairCount) {
+            postDataForStatistics();
             EndRound();
         }
     }
@@ -85,4 +90,18 @@
         header.classList.add('SuccessfulRound');
     }
 
+    //Refernece: https://stackoverflow.com/questions/34362510/c-sharp-mvc-post-model-and-additional-data-to-controller-from-js
+    function postDataForStatistics() {
+        if (numberOfFails >= 1) {
+            status = 0;
+        } else {
+            status = 1;
+        }
+        $.post("/Statistics/AddStatistic",
+            {
+                numberOfPairs: pairCount,
+                status: status,
+                fails: numberOfFails
+            });
+    }
 }

@@ -11,8 +11,14 @@ namespace PassionProject.Models
     {
         [Key]
         public int StatisticID { get; set; }
-        public string Status { get; set; }
-        public bool Visibility { get; set; }
-        public int UserID { get; set; }
+        public int Status { get; set; }
+        public string UserID { get; set; }
+        public int NumberOfPairs { get; set; }
+        public int? NumberOfFailedPairs { get; set; }
+
+        [ForeignKey("Alphabet")]
+        public int AlphabetID { get; set; }
+        public virtual Alphabet Alphabet { get; set; }
+
     }
 }

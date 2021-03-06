@@ -20,6 +20,9 @@ namespace PassionProject
             bundles.Add(new ScriptBundle("~/bundles/homeScripts").Include(
                 "~/Scripts/helpScript.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/settingsScripts").Include(
+                "~/Scripts/settingsScript.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(

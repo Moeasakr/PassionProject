@@ -33,5 +33,6 @@ namespace PassionProject.Models
         public DbSet<Statistic> Statistics { get; set; }
         public DbSet<Alphabet> Alphabets { get; set; }
         public DbSet<Pair> Pairs { get; set; }
+        public DbSet<UserSettings> UserSettings { get; set; }
     }
 }

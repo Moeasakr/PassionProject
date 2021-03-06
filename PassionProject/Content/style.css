@@ -57,6 +57,31 @@
     margin-top: 1em;
     animation: successful-header-scaling 5s infinite;
 }
+#statisticsWrapper {
+    text-align: center;
+}
+
+
+#statisticsTable {
+    margin: 0 auto;
+}
+#statisticsTable td, #statisticsTable th {
+    border: solid 1px black;
+    font-size: 1.3em;
+}
+#statisticsTable td {
+    text-align: center;
+    padding: 5px 0;
+}
+#statisticsTable th {
+    padding: 10px;
+    background-color: #22b2ea;
+}
+
+#clearStats {
+    color: red;
+    font-size:1.5em;
+}
 
 @keyframes successful-header-scaling {
     0% {

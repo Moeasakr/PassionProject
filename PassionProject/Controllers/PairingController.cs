@@ -1,4 +1,5 @@
-﻿using PassionProject.Models;
+﻿using Microsoft.AspNet.Identity;
+using PassionProject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,10 +27,10 @@ namespace PassionProject.Controllers
         [HttpGet]
         public ActionResult StartRound()
         {
-            //I plan on making 10 pairs the default setting for a normal round, but for demo purposes I used 2 to make it easier to try out the funcionality
-            int count = 2;
-            //int count = 10;
-            List<Pair> Pairs = db.Pairs.Where(x => x.AlphabetID == 1).Take(count).ToList();
+            //Get the pair settings from the UserSettings table
+            string userid = User.Identity.GetUserId();
+            int numberOfPairs = Convert.ToInt32(db.UserSettings.Where(c => c.UserID == userid).FirstOrDefault().NumberOfPairs.ToString());
+            List<Pair> Pairs = db.Pairs.Where(x => x.AlphabetID == 1).Take(numberOfPairs).ToList();
             List<PairDto> PairDtos = new List<PairDto>();
 
             foreach (var pair in Pairs)
